@@ -15,7 +15,6 @@ int main() {
 
 	map <int, vector<int>> map;
 
-
 	for (int i = 0; i < n; i++) {
 		cin >> A[i];
 
@@ -33,7 +32,7 @@ int main() {
 		else {
 			cout << -1 << '\n';
 		}
-	}	
+	}
 
 	return 0;
 }

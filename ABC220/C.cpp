@@ -11,22 +11,31 @@ int main() {
 	int n;
 	cin >> n;
 
-	vector<int> A(n);
-	vector<ll> v(401);
+	vi A(n);
+
+	ll s = 0;
 
 	for (int i = 0; i < n; i++) {
 		cin >> A[i];
-		v[A[i]+200]++;
+		s += A[i];
 	}
 
-	ll ans = 0;
-	for (int i = 0; i < 401; i++) {
-		for (int j = i + 1; j < 401; j++) {
-			ans += v[i] * v[j] * pow((i-j), 2);
+	ll x;
+	cin >> x;
+
+	ll p = x / s;
+	ll r = x % s;
+
+	ll lSum = 0;
+
+	for (int i = 0; i < n; i++) {
+		lSum += A[i];
+		if (lSum > r) {
+			cout << p*n + (i + 1) << '\n';
+			return 0;
 		}
 	}
 
-	cout << ans << '\n';
 
 	return 0;
 }
